@@ -1,32 +1,38 @@
+
 class ColourSelector extends React.Component {
+
     render() {
         return (
-    		<button className="blue">
-    		</button>
-    		<button className="green">
-    		</button>
-    		<button className="red">
-    		</button>
+        	<div className="colour_selector_container">
+	    		<div className="blue_button">
+	    		</div>
+	    		<div className="green_button">
+	    		</div>
+	    		<div className="red_button">
+	    		</div>
+	    	</div>
         );
     }
 }
 
 class Textarea extends React.Component {
+	
     render() {
         return (
             <textarea className="textarea">
-        	    {/* TODO */}
+        	    TEXT
             </textarea>
         );
     }
 }
 
 class Checkmark extends React.Component {
+
 	render() {
 		return (
-			<button className="checkmark">
-		    	{/* TODO */}
-		    </button>
+			<div className="checkmark">
+		    	C
+		    </div>
 		);
 	}
 }
@@ -46,19 +52,21 @@ class Card extends React.Component {
 	render() {
 		return (
 		    <div className="card_container">
-		    	<div className="checkmark_conainer">
+		    	<div className="checkmark_container">
 		    		{ this.renderCheckmark() }
 		    	</div>
-		    	<div className="textarea_conainer">
+		    	<div className="textarea_container">
 		    		{ this.renderTextarea() }
 		    	</div>
-		    	<div className="colour_selector_conainer">
-		    		{ this.renderColourSelector() }
-		    	</div>
+		    	
+		    	{ this.renderColourSelector() }
+		    	
 		    </div>
 		);
 	}
 }
 
-const domContainer = document.querySelector('#todo_app_container');
-ReactDOM.render(e(LikeButton), domContainer);
+ReactDOM.render(
+  <Card />,
+  document.getElementById('todo_app_container')
+);

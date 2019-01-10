@@ -1,11 +1,22 @@
-.checkmark_container {
-	background-color: green;
+.card_container {
+	width: 620px;
+	height: 100px;
 }
 
-.colour_selector_container {
-	background-color: red;
+.checkmark_container {
+	float: left;
+	width: 60px;
+	height: 100px;
 }
 
 .textarea_container {
-	background-color: blue;
+	float: left;
+	width: 500px;
+	height: 60px;
+}
+
+.colour_selector_container {
+	float: left;
+	width:  60px;
+	height: 20px;
 }
