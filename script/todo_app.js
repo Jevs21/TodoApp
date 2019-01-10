@@ -19,15 +19,12 @@ class Textarea extends React.Component {
 	
     render() {
         return (
-            <textarea className="textarea">
-        	    TEXT
-            </textarea>
+            <input type="text" name="new_task" className="textarea" />
         );
     }
 }
 
 class Checkmark extends React.Component {
-
 	render() {
 		return (
 			<div className="checkmark">
@@ -36,6 +33,7 @@ class Checkmark extends React.Component {
 		);
 	}
 }
+
 
 class Card extends React.Component {
 	renderColourSelector() {
@@ -66,7 +64,52 @@ class Card extends React.Component {
 	}
 }
 
+class AddTaskSection extends React.Component {
+	renderCard() {
+		return <Card />
+	}
+
+	render() {
+		return (
+			<div className="add_task_container">
+				{ this.renderCard() }
+			</div>
+		);
+	}
+}
+
+class TaskList extends React.Component {
+	renderCard() {
+		return <Card />
+	}
+
+	render() {
+		return (
+			<div className='task_list_container'>
+				{ this.renderCard() }
+			</div>
+		);
+	}
+}
+
+
+class App extends React.Component {
+	renderAddTaskSection() {
+		return <AddTaskSection />;
+	}
+	renderTaskList() {
+		return <TaskList />;
+	}
+
+	render() {
+		return (
+			{ this.renderAddTaskSection() }
+			
+		);
+	}
+}
+
 ReactDOM.render(
-  <Card />,
+  <App />,
   document.getElementById('todo_app_container')
 );
