@@ -103,8 +103,10 @@ class App extends React.Component {
 
 	render() {
 		return (
-			{ this.renderAddTaskSection() }
-			
+			<div className='app_container'>
+				{ this.renderAddTaskSection() }
+				{ this.renderTaskList() }
+			</div>
 		);
 	}
 }
