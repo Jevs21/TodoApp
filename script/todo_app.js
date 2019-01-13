@@ -3,7 +3,7 @@ class Textarea extends React.Component {
 	
     render() {
         return (
-            <input type="text" name="new_task" className="textarea" />
+            <input type="text" name="new_task" className="textarea" value={this.props.message}/>
         );
     }
 }
@@ -12,7 +12,7 @@ class Textarea extends React.Component {
 class Card extends React.Component {
 
 	renderTextarea() {
-		return <Textarea />;
+		return <Textarea message={this.props.message} />;
 	}
 
 
@@ -21,7 +21,7 @@ class Card extends React.Component {
 		    <div className="card_container">
 		    	<div className="checkmark_container">
 		    		<div className="checkmark">
-				    	{ getThe(this.props.test) }
+				    	C
 				    </div>
 		    	</div>
 		    	
@@ -46,7 +46,21 @@ class Card extends React.Component {
 
 class App extends React.Component {
 	renderCard() {
-		return <Card test="Ayy"/>
+		// Add properties to define a blank (input) card
+		return <Card />
+	}
+
+	renderCardList() {
+		let UserData = getUserData();
+
+		let card_list = [];
+
+		for(let i = 0; i < UserData.task_amt; i++){
+			let message_val = UserData.task_list[i].message;
+			card_list.push(<Card message={message_val} />);
+		}
+
+		return card_list;
 	}
 
 	render() {
@@ -56,7 +70,7 @@ class App extends React.Component {
 					{ this.renderCard() }
 				</div>
 				<div className='task_list_container'>
-					{ this.renderCard() }
+					{ this.renderCardList() }
 				</div>
 			</div>
 		);
@@ -66,8 +80,6 @@ class App extends React.Component {
 if(!checkForUserData()){
 	createNewUserData();
 }
-
-let UserData = getUserData();
 
 ReactDOM.render(
   <App />,
