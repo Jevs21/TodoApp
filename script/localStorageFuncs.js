@@ -53,14 +53,14 @@ function dev_clearLocalStorage() {
 
 function dev_addLocalStorage() {
 	task_0 = {
-		isComplete : "0",
+		isComplete : "COMPLETE",
 		message    : "This is the first task!",
 		color      : "red"
 	}
 	window.localStorage.setItem('task_0', JSON.stringify(task_0));
 
 	task_1 = {
-		isComplete : "0",
+		isComplete : "INCOMPLETE",
 		message    : "Make some more dummy data",
 		color      : "green"
 	}
@@ -68,7 +68,7 @@ function dev_addLocalStorage() {
 
 
 	task_2 = {
-		isComplete : "0",
+		isComplete : "COMPLETE",
 		message    : "Do some actual school work",
 		color      : "red"
 	}
