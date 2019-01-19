@@ -41,6 +41,28 @@ function getUserData(){
 	}
 }
 
+function updateUserData(name, status, msg, colour){
+
+	// Add param error checking
+	console.log("CARD DATA: " + name + ", " + status + ", " + msg + ", " + colour );
+
+	//let task_amt_int = parseInt(window.localStorage.getItem("task_amt"));
+
+	update = {
+		name    : task,
+		status  : is_complete,
+		message : msg,
+		colour  : colour
+	}
+	window.localStorage.setItem(task, JSON.stringify(update));
+
+	//task_amt_int += 1;
+
+	//window.localStorage.setItem("task_amt", task_amt_int);
+
+	return true;
+}
+
 function createTask(message, colour){
 	alert(message);
 }
@@ -53,24 +75,27 @@ function dev_clearLocalStorage() {
 
 function dev_addLocalStorage() {
 	task_0 = {
-		isComplete : "COMPLETE",
-		message    : "This is the first task!",
-		color      : "red"
+		name    : "task_0",
+		status  : "COMPLETE",
+		message : "This is the first task!",
+		colour  : "red"
 	}
 	window.localStorage.setItem('task_0', JSON.stringify(task_0));
 
 	task_1 = {
-		isComplete : "INCOMPLETE",
-		message    : "Make some more dummy data",
-		color      : "green"
+		name    : "task_1",
+		status  : "INCOMPLETE",
+		message : "Make some more dummy data",
+		colour  : "green"
 	}
 	window.localStorage.setItem('task_1', JSON.stringify(task_1));
 
 
 	task_2 = {
-		isComplete : "COMPLETE",
-		message    : "Do some actual school work",
-		color      : "red"
+		name    : "task_2",
+		status  : "COMPLETE",
+		message : "Do some actual school work",
+		colour  : "red"
 	}
 	window.localStorage.setItem('task_2', JSON.stringify(task_2));
 
