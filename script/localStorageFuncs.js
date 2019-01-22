@@ -49,12 +49,12 @@ function updateUserData(name, status, msg, colour){
 	//let task_amt_int = parseInt(window.localStorage.getItem("task_amt"));
 
 	update = {
-		name    : task,
-		status  : is_complete,
+		name    : name,
+		status  : status,
 		message : msg,
 		colour  : colour
 	}
-	window.localStorage.setItem(task, JSON.stringify(update));
+	window.localStorage.setItem(name, JSON.stringify(update));
 
 	//task_amt_int += 1;
 
